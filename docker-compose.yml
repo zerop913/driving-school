@@ -1,0 +1,33 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      - "5000:5000"
+    env_file:
+      - ${ENV_FILE}
+    environment:
+      - REACT_APP_DB_HOST=postgres
+    depends_on:
+      - postgres
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: ${REACT_APP_DB_NAME}
+      POSTGRES_USER: ${REACT_APP_DB_USER}
+      POSTGRES_PASSWORD: ${REACT_APP_DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
