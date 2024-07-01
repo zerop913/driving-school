@@ -1,74 +1,104 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Информационная система "Автошкола"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Аннотация
 
-## Available Scripts
+Программа представляет собой информационную систему для управления автошколой. Она предоставляет централизованное хранение информации о курсах, студентах, инструкторах и экзаменах, а также удобный интерфейс для управления всеми аспектами работы автошколы.
 
-In the project directory, you can run:
+## Введение
 
-### `npm start`
+### Область применения
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Программа предназначена для использования в автошколах, учебных центрах по подготовке водителей и других организациях, связанных с обучением вождению.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Основные возможности
 
-### `npm test`
+- Регистрация и авторизация пользователей (администраторов, преподавателей, студентов и инспекторов)
+- Управление курсами и группами
+- Управление студентами и их прогрессом обучения
+- Управление преподавательским составом
+- Планирование занятий и экзаменов
+- Отслеживание результатов обучения и экзаменов
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Подготовка к работе
 
-### `npm run build`
+### Порядок установки
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Установите Docker и Docker Compose на вашу систему
+2. Клонируйте репозиторий проекта
+3. Создайте файл .env в корневой директории проекта и заполните необходимые переменные окружения
+4. Выполните команду `docker-compose up -d` в корневой директории проекта
+5. Дождитесь завершения процесса сборки и запуска контейнеров
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Порядок проверки работоспособности – тестирование
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Откройте браузер и перейдите по адресу http://localhost:3000
+2. Проверьте возможность регистрации и входа в систему
+3. Протестируйте основные функции системы (создание курсов, управление студентами, планирование занятий)
+4. Убедитесь в корректном отображении данных и работе всех компонентов системы
 
-### `npm run eject`
+### Функции пользователей
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Администратор
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Вход в систему
+- Управление автошколами
+- Управление персоналом
+- Управление курсами
+- Управление группами
+- Управление пользователями
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Преподаватель
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Вход в систему
+- Просмотр и редактирование информации о курсах
+- Управление группами
+- Проведение занятий
+- Оценка успеваемости
 
-## Learn More
+#### Студент
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Регистрация в системе
+- Вход в систему
+- Просмотр курсов
+- Запись на курсы
+- Просмотр расписания
+- Отслеживание прогресса
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Аварийные ситуации
 
-### Code Splitting
+Если во время установки или запуска приложения возникают ошибки, выполните следующие шаги:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Проверьте логи Docker контейнеров
 
-### Analyzing the Bundle Size
+   - Выполните команду `docker-compose logs` для просмотра логов всех контейнеров
+   - Проанализируйте логи на наличие ошибок или предупреждений
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Проверьте настройки переменных окружения
 
-### Making a Progressive Web App
+   - Убедитесь, что файл .env содержит все необходимые переменные
+   - Проверьте правильность значений переменных окружения
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Перезапустите контейнеры
 
-### Advanced Configuration
+   - Выполните команду `docker-compose down` для остановки контейнеров
+   - Затем выполните `docker-compose up -d` для повторного запуска
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Проверьте сетевые настройки
+   - Убедитесь, что порты 3000 и 5000 не заняты другими приложениями
+   - Проверьте настройки файервола и антивируса
 
-### Deployment
+## Термины и сокращения
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# driving-school
->>>>>>> e7d3ee5806f6249fb005c92b6b26194ab8312893
+| Термин         | Определение                                                                    |
+| -------------- | ------------------------------------------------------------------------------ |
+| Автошкола      | Учебное заведение для подготовки водителей транспортных средств                |
+| ИС             | Информационная система                                                         |
+| Docker         | Платформа для разработки, доставки и запуска приложений в контейнерах          |
+| Docker Compose | Инструмент для определения и управления многоконтейнерными приложениями Docker |
+| .env           | Файл с переменными окружения для конфигурации приложения                       |
+| Dockerfile     | Файл с инструкциями для сборки Docker-образа                                   |
+| Администратор  | Пользователь с полными правами доступа и управления системой                   |
+| Преподаватель  | Пользователь, ответственный за проведение занятий и оценку студентов           |
+| Студент        | Пользователь, проходящий обучение в автошколе                                  |
+| Курс           | Программа обучения определенной категории водительских прав                    |
+| Группа         | Объединение студентов, проходящих обучение по одному курсу                     |
